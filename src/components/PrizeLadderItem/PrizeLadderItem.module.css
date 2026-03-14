@@ -1,0 +1,5 @@
+.root {
+  --parent-height: 40px;
+  composes: button from "../../styles/_corner-button.module.css";
+  text-align: center;
+}

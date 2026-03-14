@@ -1,0 +1,136 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "text": "What is the capital of France?",
+      "prize": 500,
+      "answers": [
+        { "id": "q1a1", "text": "London", "isCorrect": false },
+        { "id": "q1a2", "text": "Berlin", "isCorrect": false },
+        { "id": "q1a3", "text": "Paris", "isCorrect": true },
+        { "id": "q1a4", "text": "Madrid", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "How many sides does a hexagon have?",
+      "prize": 1000,
+      "answers": [
+        { "id": "q2a1", "text": "5", "isCorrect": false },
+        { "id": "q2a2", "text": "6", "isCorrect": true },
+        { "id": "q2a3", "text": "7", "isCorrect": false },
+        { "id": "q2a4", "text": "8", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "q3",
+      "text": "What is the chemical symbol for water?",
+      "prize": 2000,
+      "answers": [
+        { "id": "q3a1", "text": "O2", "isCorrect": false },
+        { "id": "q3a2", "text": "CO2", "isCorrect": false },
+        { "id": "q3a3", "text": "H2O", "isCorrect": true },
+        { "id": "q3a4", "text": "NaCl", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "q4",
+      "text": "Which planet is known as the Red Planet?",
+      "prize": 4000,
+      "answers": [
+        { "id": "q4a1", "text": "Venus", "isCorrect": false },
+        { "id": "q4a2", "text": "Jupiter", "isCorrect": false },
+        { "id": "q4a3", "text": "Saturn", "isCorrect": false },
+        { "id": "q4a4", "text": "Mars", "isCorrect": true }
+      ]
+    },
+    {
+      "id": "q5",
+      "text": "Who painted the Mona Lisa?",
+      "prize": 8000,
+      "answers": [
+        { "id": "q5a1", "text": "Leonardo da Vinci", "isCorrect": true },
+        { "id": "q5a2", "text": "Michelangelo", "isCorrect": false },
+        { "id": "q5a3", "text": "Raphael", "isCorrect": false },
+        { "id": "q5a4", "text": "Donatello", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "q6",
+      "text": "What is the largest ocean on Earth?",
+      "prize": 16000,
+      "answers": [
+        { "id": "q6a1", "text": "Atlantic Ocean", "isCorrect": false },
+        { "id": "q6a2", "text": "Indian Ocean", "isCorrect": false },
+        { "id": "q6a3", "text": "Arctic Ocean", "isCorrect": false },
+        { "id": "q6a4", "text": "Pacific Ocean", "isCorrect": true }
+      ]
+    },
+    {
+      "id": "q7",
+      "text": "In which year did World War II end?",
+      "prize": 32000,
+      "answers": [
+        { "id": "q7a1", "text": "1943", "isCorrect": false },
+        { "id": "q7a2", "text": "1944", "isCorrect": false },
+        { "id": "q7a3", "text": "1945", "isCorrect": true },
+        { "id": "q7a4", "text": "1946", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "q8",
+      "text": "What is the speed of light approximately?",
+      "prize": 64000,
+      "answers": [
+        { "id": "q8a1", "text": "300,000 km/s", "isCorrect": true },
+        { "id": "q8a2", "text": "150,000 km/s", "isCorrect": false },
+        { "id": "q8a3", "text": "450,000 km/s", "isCorrect": false },
+        { "id": "q8a4", "text": "600,000 km/s", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "q9",
+      "text": "Which element has the atomic number 79?",
+      "prize": 125000,
+      "answers": [
+        { "id": "q9a1", "text": "Silver", "isCorrect": false },
+        { "id": "q9a2", "text": "Platinum", "isCorrect": false },
+        { "id": "q9a3", "text": "Gold", "isCorrect": true },
+        { "id": "q9a4", "text": "Copper", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "q10",
+      "text": "What is the longest river in the world?",
+      "prize": 250000,
+      "answers": [
+        { "id": "q10a1", "text": "Amazon", "isCorrect": false },
+        { "id": "q10a2", "text": "Nile", "isCorrect": true },
+        { "id": "q10a3", "text": "Yangtze", "isCorrect": false },
+        { "id": "q10a4", "text": "Mississippi", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "q11",
+      "text": "Which country has the most natural lakes?",
+      "prize": 500000,
+      "answers": [
+        { "id": "q11a1", "text": "Russia", "isCorrect": false },
+        { "id": "q11a2", "text": "USA", "isCorrect": false },
+        { "id": "q11a3", "text": "Canada", "isCorrect": true },
+        { "id": "q11a4", "text": "Finland", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "q12",
+      "text": "What is the smallest prime number?",
+      "prize": 1000000,
+      "answers": [
+        { "id": "q12a1", "text": "1", "isCorrect": false },
+        { "id": "q12a2", "text": "2", "isCorrect": true },
+        { "id": "q12a3", "text": "3", "isCorrect": false },
+        { "id": "q12a4", "text": "0", "isCorrect": false }
+      ]
+    }
+  ]
+}

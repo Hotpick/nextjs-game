@@ -1,0 +1,74 @@
+@import "./reset.css";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --black-40: #d0d0d8;
+  --black-100: #1c1c21;
+  --green-5: #e6faea;
+  --green-100: #47d867;
+  --orange-5: #fff3eb;
+  --orange-80: #ffac70;
+  --orange-100: #ff8b37;
+  --orange-120: #e87928;
+  --red-5: #fdeeed;
+  --red-100: #ec6259;
+  --white-100: #ffffff;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.gap-16 {
+  gap: 16px;
+}
+
+.col-50 {
+  width: 50%;
+}

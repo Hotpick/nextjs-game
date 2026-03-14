@@ -1,0 +1,14 @@
+.rootNew {
+  --parent-height: 72px;
+  composes: button from "../../styles/_corner-button.module.css";
+}
+
+.rootNew:after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  border-bottom: 1px solid #ff8b37;
+}

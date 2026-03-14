@@ -1,0 +1,67 @@
+.button {
+  --button-border-color: var(--black-40);
+  --button-hover-color: var(--black-40);
+  --button-bg-color: var(--white-100);
+  --button-text-color: var(--black-100);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 calc(var(--parent-height) * 3 / 8);
+  width: 100%;
+}
+
+.button :global(.inner) {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  border: 1px solid var(--button-border-color);
+  border-left-color: transparent;
+  background-color: var(--button-bg-color);
+  border-right-color: transparent;
+  border-radius: calc(var(--parent-height) * 2 / 9);
+  width: 100%;
+  color: var(--button-text-color);
+  height: var(--parent-height);
+  z-index: 2;
+}
+
+.button :global(.inner):before,
+.button :global(.inner):after {
+  content: "";
+  position: absolute;
+  width: calc(var(--parent-height) * 23 / 36);
+  aspect-ratio: 1 / 1;
+  top: 50%;
+  transform: rotate(-45deg);
+  transform-origin: center;
+  border-top: 1px solid var(--button-border-color);
+  background-color: var(--button-bg-color);
+}
+
+.button :global(.content) {
+  position: relative;
+  font-weight: 400;
+  font-size: 20px;
+  width: 100%;
+  z-index: 1;
+}
+
+.button :global(.inner):before {
+  left: 0;
+  border-left: 1px solid var(--button-border-color);
+  transform-origin: top left;
+}
+
+.button :global(.inner):after {
+  right: 0;
+  border-right: 1px solid var(--button-border-color);
+  transform: rotate(45deg);
+  transform-origin: top right;
+}
+
+.button:hover :global(.inner),
+.button:hover :global(.inner):before,
+.button:hover :global(.inner):after {
+  --button-border-color: var(--button-hover-color);
+}

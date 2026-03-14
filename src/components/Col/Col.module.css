@@ -1,0 +1,18 @@
+.root {
+  width: calc(
+    var(--col-span, 12) / 12 * (100% + var(--row-gap, 0px)) -
+      var(--row-gap, 0px)
+  );
+  flex-grow: 0;
+  flex-basis: auto;
+  box-sizing: border-box;
+}
+
+@media (min-width: 900px) {
+  .root {
+    width: calc(
+      var(--col-md, var(--col-span, 12)) / 12 * (100% + var(--row-gap, 0px)) -
+        var(--row-gap, 0px)
+    );
+  }
+}
