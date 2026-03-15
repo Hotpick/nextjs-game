@@ -15,11 +15,17 @@
   --red-5: #fdeeed;
   --red-100: #ec6259;
   --white-100: #ffffff;
+
+  /* Breakpoints */
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  font-size: 20px;
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -36,20 +42,8 @@ body {
   z-index: 1;
 }
 
-.h-100 {
-  height: 100%;
-}
-
-.flex-grow {
-  flex-grow: 1;
-}
-
 .flex {
   display: flex;
-}
-
-.flex-col {
-  flex-direction: column;
 }
 
 .align-center {
@@ -65,10 +59,18 @@ body {
   width: 100%;
 }
 
-.gap-16 {
-  gap: 16px;
-}
-
 .col-50 {
   width: 50%;
+}
+
+h1 {
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.2;
 }

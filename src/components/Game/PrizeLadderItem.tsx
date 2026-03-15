@@ -1,5 +1,3 @@
-"use client";
-
 import styles from "./PrizeLadderItem.module.css";
 
 type PrizeLadderItemState = "future" | "current" | "past";
@@ -30,12 +28,16 @@ const PrizeLadderItem = ({ prize, state }: PrizeLadderItemProps) => {
   const ladderItemStyles = {
     "--button-border-color": colors.border,
     "--button-text-color": colors.textColor,
+    "--button-hover-color": colors.border,
   } as React.CSSProperties;
 
   return (
     <div className={styles.root}>
-      <span className="inner" style={ladderItemStyles}>
-        <span className="content">{formatPrize(prize)}</span>
+      <span className="line" aria-hidden="true"></span>
+      <span className="body">
+        <span className="inner" style={ladderItemStyles}>
+          <span className="content">{formatPrize(prize)}</span>
+        </span>
       </span>
     </div>
   );

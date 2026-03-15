@@ -1,6 +1,5 @@
-import PrizeLadderItem from "@/components/PrizeLadderItem";
-
 import styles from "./PrizeLadder.module.css";
+import PrizeLadderItem from "./PrizeLadderItem";
 
 type PrizeLadderProps = {
   prizes: number[];

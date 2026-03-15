@@ -4,11 +4,10 @@ import styles from "./AnswerOption.module.css";
 type AnswerState = "inactive" | "selected" | "correct" | "wrong";
 
 type AnswerOptionProps = {
-  letter: string;
-  text: string;
   state: AnswerState;
   onClick: () => void;
   disabled?: boolean;
+  children: React.ReactNode;
 };
 
 type StateColors = {
@@ -31,7 +30,7 @@ const COLORS: Record<AnswerState, StateColors> = {
   correct: {
     bg: "var(--green-5)",
     border: "var(--green-100)",
-    hover: "var(--orange-100)",
+    hover: "var(--green-100)",
   },
   wrong: {
     bg: "var(--red-5)",
@@ -41,10 +40,10 @@ const COLORS: Record<AnswerState, StateColors> = {
 };
 
 const AnswerOption = ({
-  text,
   state,
   onClick,
   disabled = false,
+  children,
 }: AnswerOptionProps) => {
   const buttonStyles = {
     "--button-border-color": COLORS[state].border,
@@ -55,15 +54,18 @@ const AnswerOption = ({
   return (
     <>
       <button
-        className={styles.rootNew}
+        className={styles.root}
         onClick={onClick}
         disabled={disabled}
         type="button"
         style={buttonStyles}
       >
-        <span className="inner">
-          <span className="content">{text}</span>
-        </span>
+        <span className="line" aria-hidden="true"></span>
+        <div className="body">
+          <span className="inner">
+            <span className="content">{children}</span>
+          </span>
+        </div>
       </button>
     </>
   );

@@ -31,7 +31,7 @@ export default function Home() {
             />
           </Col>
           <Col span={12} md={6}>
-            <h1 className={styles.title}>Who wants to be a millionaire?</h1>
+            <h1>Who wants to be a millionaire?</h1>
             <Button onClick={handleStart} inline>
               Start
             </Button>

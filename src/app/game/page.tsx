@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import AnswerOption from "@/components/AnswerOption";
-import PrizeLadder from "@/components/PrizeLadder";
+import GameSidebar from "@/components/Game/GameSidebar";
 import { useGame } from "@/context/GameContext";
 import type { Answer, Question } from "@/types/game";
 
@@ -28,7 +28,6 @@ export default function GamePage() {
     {},
   );
   const [isAnswering, setIsAnswering] = useState(false);
-  const [isPrizeLadderOpen, setIsPrizeLadderOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -173,26 +172,10 @@ export default function GamePage() {
 
   return (
     <div className={styles.root}>
-      {/* Mobile hamburger */}
-      <button
-        type="button"
-        className={styles.hamburger}
-        onClick={() => {
-          setIsPrizeLadderOpen(true);
-        }}
-        aria-label="Open prize ladder"
-      >
-        &#9776;
-      </button>
-
       {/* Main game area */}
       <div className={styles.gameArea}>
-        <div className={styles.questionWrapper}>
-          <div className={styles.questionNumber}>
-            Question {state.currentQuestionIndex + 1} of{" "}
-            {state.questions.length}
-          </div>
-          <h1 className={styles.questionText}>{currentQuestion.text}</h1>
+        <div className={styles.question}>
+          <h2>{currentQuestion.text}</h2>
         </div>
 
         <div className={styles.grid}>
@@ -200,46 +183,26 @@ export default function GamePage() {
             <div className={styles.column} key={answer.id}>
               <AnswerOption
                 key={answer.id}
-                letter={LETTERS[idx] ?? String(idx + 1)}
-                text={answer.text}
                 state={answerStates[answer.id] ?? "inactive"}
                 onClick={() => {
                   handleAnswer(answer);
                 }}
                 disabled={isAnswering}
-              />
+              >
+                <span className={styles.letterBadge}>
+                  {LETTERS[idx] ?? String(idx + 1)}
+                </span>
+                <span>{answer.text}</span>
+              </AnswerOption>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Desktop prize ladder sidebar */}
-      <aside className={styles.sidebar}>
-        <PrizeLadder
-          prizes={prizes}
-          currentIndex={state.currentQuestionIndex}
-        />
-      </aside>
-
-      {/* Mobile prize ladder overlay */}
-      {isPrizeLadderOpen && (
-        <div className={styles.overlay}>
-          <button
-            type="button"
-            className={styles.closeButton}
-            onClick={() => {
-              setIsPrizeLadderOpen(false);
-            }}
-            aria-label="Close prize ladder"
-          >
-            &times;
-          </button>
-          <PrizeLadder
-            prizes={prizes}
-            currentIndex={state.currentQuestionIndex}
-          />
-        </div>
-      )}
+      <GameSidebar
+        prizes={prizes}
+        currentQuestionIndex={state.currentQuestionIndex}
+      />
     </div>
   );
 }

@@ -1,0 +1,15 @@
+.root {
+  --button-inner-padding: 0 41px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  padding: 16px 0;
+}
+
+@media (min-width: 992px) {
+  .root {
+    --button-inner-padding: 0 69px;
+  }
+}
