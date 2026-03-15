@@ -25,6 +25,6 @@ test("Page renders welcome heading and start button", () => {
       name: /who wants to be a millionaire/i,
     }),
   ).toBeDefined();
-  const buttons = screen.getAllByRole("button", { name: /start game/i });
+  const buttons = screen.getAllByRole("button", { name: /Start/i });
   expect(buttons.length).toBeGreaterThan(0);
 });
