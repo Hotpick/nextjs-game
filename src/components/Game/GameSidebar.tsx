@@ -13,42 +13,42 @@ const GameSidebar = ({
   currentQuestionIndex: number;
 }) => {
   const [isPrizeLadderOpen, setIsPrizeLadderOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+
+  const handleToggle = () => {
+    if (isPrizeLadderOpen) {
+      setIsClosing(true);
+      setTimeout(() => {
+        setIsPrizeLadderOpen(false);
+        setIsClosing(false);
+      }, 250);
+    } else {
+      setIsPrizeLadderOpen(true);
+    }
+  };
+
+  const sidebarClass = [
+    styles.sidebar,
+    isPrizeLadderOpen ? styles.open : "",
+    isClosing ? styles.closing : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <>
-      {/* Mobile hamburger */}
       <button
         type="button"
-        className={styles.hamburger}
-        onClick={() => {
-          setIsPrizeLadderOpen(true);
-        }}
+        className={`${styles.toggleSidebarButton}${isPrizeLadderOpen ? ` ${styles.open}` : ""}`}
+        onClick={handleToggle}
         aria-label="Open prize ladder"
       >
-        &#9776;
+        <span></span>
       </button>
 
-      {/* Desktop prize ladder sidebar */}
-      <aside className={styles.sidebar}>
+      <aside className={sidebarClass}>
         <PrizeLadder prizes={prizes} currentIndex={currentQuestionIndex} />
       </aside>
-
-      {/* Mobile prize ladder overlay */}
-      {isPrizeLadderOpen && (
-        <div className={styles.overlay}>
-          <button
-            type="button"
-            className={styles.closeButton}
-            onClick={() => {
-              setIsPrizeLadderOpen(false);
-            }}
-            aria-label="Close prize ladder"
-          >
-            &times;
-          </button>
-          <PrizeLadder prizes={prizes} currentIndex={currentQuestionIndex} />
-        </div>
-      )}
     </>
   );
 };
