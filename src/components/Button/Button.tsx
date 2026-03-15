@@ -1,12 +1,12 @@
+import { ButtonHTMLAttributes } from "react";
+
 import styles from "./Button.module.css";
 
 type ButtonProps = {
   children: React.ReactNode;
-  onClick?: () => void;
-  type?: "button" | "submit" | "reset";
-  disabled?: boolean;
   inline?: boolean;
-};
+  className?: string;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button = ({
   children,
@@ -14,8 +14,14 @@ const Button = ({
   type = "button",
   inline = false,
   disabled = false,
+  className,
+  ...props
 }: ButtonProps) => {
-  const classNames = inline ? `${styles.root} ${styles.inline}` : styles.root;
+  const classNames = [
+    styles.root,
+    inline ? styles.inline : "",
+    className ?? "",
+  ].join(" ");
 
   return (
     <button
@@ -23,6 +29,7 @@ const Button = ({
       className={classNames}
       onClick={onClick}
       disabled={disabled}
+      {...props}
     >
       <span>{children}</span>
     </button>
