@@ -3,12 +3,12 @@
 
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   width: 100%;
   padding: 16px 0;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .root {
     --button-inner-padding: 0 69px;
   }

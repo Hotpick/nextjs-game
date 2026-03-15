@@ -1,19 +1,24 @@
-.button {
+.root {
+  --hexagon-line-cell-height-default: 40px;
   position: relative;
   text-align: left;
   width: 100%;
   padding: var(--button-inner-padding, 0);
 }
 
-.button :global(.body) {
+.body {
   display: inline-flex;
   align-items: center;
-  padding: 0 calc(var(--parent-height) * 3 / 8);
+  padding: 0
+    calc(
+      var(--hexagon-line-cell-height, var(--hexagon-line-cell-height-default)) *
+        3 / 8
+    );
   position: relative;
   width: 100%;
 }
 
-.button :global(.line) {
+.line {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -23,7 +28,7 @@
   background: var(--button-border-color, var(--black-40));
 }
 
-.button :global(.inner) {
+.inner {
   flex-grow: 1;
   display: flex;
   align-items: center;
@@ -32,18 +37,27 @@
   border-left-color: transparent;
   background-color: var(--button-bg-color, var(--white-100));
   border-right-color: transparent;
-  border-radius: calc(var(--parent-height) * 2 / 9);
+  border-radius: calc(
+    var(--hexagon-line-cell-height, var(--hexagon-line-cell-height-default)) *
+      2 / 9
+  );
   width: 100%;
   color: var(--button-text-color, var(--black-100));
-  height: var(--parent-height);
+  height: var(
+    --hexagon-line-cell-height,
+    var(--hexagon-line-cell-height-default)
+  );
   z-index: 2;
 }
 
-.button :global(.inner):before,
-.button :global(.inner):after {
+.inner:before,
+.inner:after {
   content: "";
   position: absolute;
-  width: calc(var(--parent-height) * 23 / 36);
+  width: calc(
+    var(--hexagon-line-cell-height, var(--hexagon-line-cell-height-default)) *
+      23 / 36
+  );
   aspect-ratio: 1 / 1;
   top: 50%;
   transform: rotate(-45deg);
@@ -52,32 +66,32 @@
   background-color: var(--button-bg-color, var(--white-100));
 }
 
-.button :global(.content) {
+.content {
   position: relative;
   display: flex;
+  align-items: center;
   gap: 8px;
   font-weight: 400;
-  font-size: 20px;
   width: 100%;
   z-index: 1;
 }
 
-.button :global(.inner):before {
+.inner:before {
   left: 0;
   border-left: 1px solid var(--button-border-color, var(--black-40));
   transform-origin: top left;
 }
 
-.button :global(.inner):after {
+.inner:after {
   right: 0;
   border-right: 1px solid var(--button-border-color, var(--black-40));
   transform: rotate(45deg);
   transform-origin: top right;
 }
 
-.button:hover :global(.inner),
-.button:hover :global(.line),
-.button:hover :global(.inner):before,
-.button:hover :global(.inner):after {
+.root:hover .inner,
+.root:hover .line,
+.root:hover .inner:before,
+.root:hover .inner:after {
   --button-border-color: var(--button-hover-color, var(--black-40));
 }

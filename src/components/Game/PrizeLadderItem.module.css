@@ -1,5 +1,4 @@
 .root {
-  --parent-height: 40px;
-  composes: button from "../../styles/_corner-button.module.css";
+  --hexagon-line-cell-height: 40px;
   text-align: center;
 }

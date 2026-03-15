@@ -1,0 +1,10 @@
+.root {
+  --hexagon-line-cell-height: 56px;
+  --button-inner-padding: 0 17px;
+}
+
+@media (min-width: 992px) {
+  .root {
+    --hexagon-line-cell-height: 72px;
+  }
+}

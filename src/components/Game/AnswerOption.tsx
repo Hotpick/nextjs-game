@@ -1,5 +1,6 @@
 "use client";
 
+import HexagonLineCell from "../HexagonLineCell";
 import styles from "./AnswerOption.module.css";
 type AnswerState = "inactive" | "selected" | "correct" | "wrong";
 
@@ -52,22 +53,14 @@ const AnswerOption = ({
   } as React.CSSProperties;
 
   return (
-    <>
-      <button
-        className={styles.root}
-        onClick={onClick}
-        disabled={disabled}
-        type="button"
-        style={buttonStyles}
-      >
-        <span className="line" aria-hidden="true"></span>
-        <div className="body">
-          <span className="inner">
-            <span className="content">{children}</span>
-          </span>
-        </div>
-      </button>
-    </>
+    <HexagonLineCell
+      onClick={onClick}
+      disabled={disabled}
+      className={styles.root}
+      style={buttonStyles}
+    >
+      {children}
+    </HexagonLineCell>
   );
 };
 

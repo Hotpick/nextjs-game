@@ -1,3 +1,4 @@
+import HexagonLineCell from "../HexagonLineCell";
 import styles from "./PrizeLadderItem.module.css";
 
 type PrizeLadderItemState = "future" | "current" | "past";
@@ -32,14 +33,9 @@ const PrizeLadderItem = ({ prize, state }: PrizeLadderItemProps) => {
   } as React.CSSProperties;
 
   return (
-    <div className={styles.root}>
-      <span className="line" aria-hidden="true"></span>
-      <span className="body">
-        <span className="inner" style={ladderItemStyles}>
-          <span className="content">{formatPrize(prize)}</span>
-        </span>
-      </span>
-    </div>
+    <HexagonLineCell className={styles.root} style={ladderItemStyles}>
+      {formatPrize(prize)}
+    </HexagonLineCell>
   );
 };
 

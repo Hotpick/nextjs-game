@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-import AnswerOption from "@/components/AnswerOption";
+import AnswerOption from "@/components/Game/AnswerOption";
 import GameSidebar from "@/components/Game/GameSidebar";
 import { useGame } from "@/context/GameContext";
 import type { Answer, Question } from "@/types/game";
