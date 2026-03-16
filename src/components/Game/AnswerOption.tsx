@@ -9,6 +9,7 @@ type AnswerOptionProps = {
   onClick: () => void;
   disabled?: boolean;
   children: React.ReactNode;
+  letter?: React.ReactNode;
 };
 
 type StateColors = {
@@ -45,6 +46,7 @@ const AnswerOption = ({
   onClick,
   disabled = false,
   children,
+  letter,
 }: AnswerOptionProps) => {
   const buttonStyles = {
     "--button-border-color": COLORS[state].border,
@@ -58,6 +60,7 @@ const AnswerOption = ({
       disabled={disabled}
       className={styles.root}
       style={buttonStyles}
+      prefix={letter}
     >
       {children}
     </HexagonLineCell>

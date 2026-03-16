@@ -72,15 +72,17 @@ export default function GamePage() {
               <AnswerOption
                 key={answer.id}
                 state={answerStates[answer.id] ?? "inactive"}
+                letter={
+                  <span className={styles.letterBadge}>
+                    {LETTERS[idx] ?? String(idx + 1)}
+                  </span>
+                }
                 onClick={() => {
                   handleAnswer(answer);
                 }}
                 disabled={isAnswering}
               >
-                <span className={styles.letterBadge}>
-                  {LETTERS[idx] ?? String(idx + 1)}
-                </span>
-                <span>{answer.text}</span>
+                {answer.text}
               </AnswerOption>
             </div>
           ))}
