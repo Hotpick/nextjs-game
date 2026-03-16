@@ -1,4 +1,4 @@
 .root {
-  --hexagon-line-cell-height: 40px;
+  --hexagon-line-cell-height: var(--space-10);
   text-align: center;
 }

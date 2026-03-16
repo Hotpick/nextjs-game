@@ -27,7 +27,7 @@ const Hero = ({ title, subtitle, buttonLabel, onButtonClick }: HeroProps) => {
       <div className={styles.contentSection}>
         <div>
           {subtitle && <h2 className={styles.subtitle}>{subtitle}</h2>}
-          <h1 className={styles.title}>{title}</h1>
+          <h1>{title}</h1>
         </div>
         <Button onClick={onButtonClick} inline className={styles.button}>
           {buttonLabel}

@@ -2,14 +2,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 16px;
-  min-height: 48px;
+  padding: var(--space-2) var(--space-4);
+  min-height: var(--space-12);
   background-color: var(--orange-100);
   color: var(--white-100);
-  font-size: 20px;
+  font-size: var(--font-lg);
   font-weight: 600;
   border: none;
-  border-radius: 12px;
+  border-radius: var(--space-3);
   cursor: pointer;
   transition: background-color 0.15s ease;
 }
@@ -34,6 +34,6 @@
 
 @media (min-width: 768px) {
   .root {
-    min-height: 64px;
+    min-height: var(--space-16);
   }
 }

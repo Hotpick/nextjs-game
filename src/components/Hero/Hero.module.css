@@ -1,9 +1,9 @@
 .root {
   display: flex;
-  gap: 32px;
+  gap: var(--space-8);
   flex-direction: column;
   width: 100%;
-  padding: 48px 0;
+  padding: var(--space-12) 0;
   height: 100svh;
 }
 
@@ -29,7 +29,7 @@
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  gap: 64px;
+  gap: var(--space-16);
   position: relative;
   z-index: 1;
   flex: 1;
@@ -42,22 +42,14 @@
   height: auto;
 }
 
-.title {
-  font-size: clamp(28px, 4vw, 42px);
-  font-weight: 600;
-  color: #1a1a1a;
-  line-height: 1.2;
-}
-
 .subtitle {
-  font-size: 16px;
-  color: #666666;
-  line-height: 1.6;
+  color: var(--black-100);
+  opacity: 0.5;
 }
 
 @media (min-width: 768px) {
   .root {
-    gap: 16px;
+    gap: var(--space-4);
     flex-direction: row;
     align-items: center;
   }
@@ -78,7 +70,7 @@
 
   .imageSection,
   .contentSection {
-    width: calc(50% - 8px);
+    width: calc(50% - var(--space-2));
   }
 
   .button {

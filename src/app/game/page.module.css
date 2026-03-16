@@ -1,7 +1,7 @@
 .root {
   display: flex;
   flex-direction: row;
-  min-height: 100vh;
+  min-height: 100svh;
 }
 
 .gameArea {
@@ -9,8 +9,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
   background-color: #f5f5f5;
   min-width: 0;
 }
@@ -19,19 +19,19 @@
   flex-grow: 1;
   display: flex;
   align-items: center;
-  padding: 0 16px;
+  padding: 0 var(--space-4);
 }
 
 .letterBadge {
   color: var(--orange-100);
   font-weight: 600;
-  font-size: 20px;
+  font-size: var(--font-lg);
 }
 
 .grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--space-2);
 }
 
 .column {
@@ -43,27 +43,27 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  gap: 16px;
+  min-height: 100svh;
+  gap: var(--space-4);
 }
 
 .loadingText {
-  font-size: 18px;
+  font-size: 1.125rem;
   color: #666666;
 }
 
 .errorText {
-  font-size: 18px;
+  font-size: 1.125rem;
   color: #e57373;
 }
 
 .retryButton {
-  padding: 12px 32px;
+  padding: var(--space-3) var(--space-8);
   background-color: #e8935a;
   color: #ffffff;
   border: none;
-  border-radius: 50px;
-  font-size: 16px;
+  border-radius: 3.125rem;
+  font-size: var(--font-base);
   font-weight: 600;
   cursor: pointer;
 }
@@ -76,13 +76,13 @@
   .gameArea {
     padding-top: 15vh;
     padding-bottom: 13vh;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: var(--space-10);
+    padding-right: var(--space-10);
   }
 
   .grid {
     column-gap: 0;
-    row-gap: 32px;
+    row-gap: var(--space-8);
   }
 
   .question {
@@ -97,7 +97,7 @@
 
 @media (min-width: 1200px) {
   .gameArea {
-    padding-left: 80px;
-    padding-right: 140px;
+    padding-left: 5rem;
+    padding-right: 8.75rem;
   }
 }
