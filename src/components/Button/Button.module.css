@@ -2,7 +2,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 8px 16px;
+  min-height: 48px;
   background-color: var(--orange-100);
   color: var(--white-100);
   font-size: 20px;
@@ -29,4 +30,10 @@
 .root:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+  .root {
+    min-height: 64px;
+  }
 }
